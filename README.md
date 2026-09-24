@@ -28,5 +28,6 @@ Flash the ZIP via LTBox's kernel flashing option. (I haven’t tried to flash it
 ## Sources
 - [zzh20188/GKI_KernelSU_SUSFS](https://github.com/zzh20188/GKI_KernelSU_SUSFS)
 - [ravindu644/Droidspaces-OSS](https://github.com/ravindu644/Droidspaces-OSS)
+- [miner7222/LTBox](https://github.com/miner7222/LTBox)
 
 License inherited from upstream.
