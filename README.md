@@ -1,6 +1,8 @@
 # GKI Kernel for Lenovo Xiaoxin Tab Pro GT 11.1 (TB710FU)
 
 Fork of [zzh20188/GKI_KernelSU_SUSFS](https://github.com/zzh20188/GKI_KernelSU_SUSFS) to build a custom GKI kernel with **Droidspaces** support.
+## Comment
+This is a repository for building a custom Android kernel. Specifically, in my case, the build is for the Lenovo Xiaoxin Tab Pro GT 11.1 tablet. I built the standard kernel from the AOSP project, adding support for DroidSpaces and ReSukiSU. The build itself is carried out in GitHub Actions, which allows you to completely avoid building on your own computer. GitHub servers are fast and powerful; the entire build took less than an hour.
 
 - **Device**: Lenovo Xiaoxin Tab Pro GT 11.1 (TB710FU), Snapdragon 8 Gen 3
 - **Kernel branch**: `android14-6.1` (stock Lenovo ROM, no ColorOS port)
