@@ -9,17 +9,25 @@ This is a repository for building a custom Android kernel. Specifically, in my c
 - **Goal**: Enable `PID namespace` and `IPC namespace` for Droidspaces.
 
 ## Build
+0. Fork this repository, and you'll get access to "GitHub Actions".
 1. Go to **Actions** → **Kernel Build**.
 2. Run workflow with:
    - Android: `android14`
    - Kernel: `6.1`
-   - Sub-level: e.g. `145`
-   - Droidspaces patch slot: `678` (or `123`/`345`)
+     Pls, remember:
+     Please do not change the main kernel version. I haven't tried looking for patches for vendor modules, and besides, Lenovo doesn't provide us with the source code at all. As far as I understand, you can change the secondary version to whatever you like—for example, 6.1.165 or 6.1.420. Not all of these versions are stable, but I haven't noticed any issues with 6.1.165. If you're up for it, you could write something online about how Lenovo "lawfully complies" with the GPL license 😉
+   - Sub-level: e.g. `145` (or 165, or 420, maybe 80085 or 228)
+   - Droidspaces patch slot: `678` (or `123`/`345`) 
 3. Download artifact when done.
 
 ## Install
-Use **LTBox** (bootloader locked). **Backup `boot` and `init_boot` first!**
-Flash the ZIP via LTBox's kernel flashing option. (I haven’t tried to flash it yet; I’ll add the instructions later.)
+Use **LTBox** (for devices with a locked bootloader). **First, back up the `boot` and `init_boot` partitions!**
+Flash the ZIP file: 
+1. Use the Root flashing function in the LTBox menu.
+2. Select the KernelSU option.
+3. You don't need to rename the kernel file (ZIP); simply feed the file to LTBox.
+4. Wait...
+5. Profit! The bootloader remains locked, but our custom GKI kernel is working.
 
 ## Notes
 - No Qualcomm patches needed — this is a GKI kernel.
@@ -27,9 +35,10 @@ Flash the ZIP via LTBox's kernel flashing option. (I haven’t tried to flash it
 - 6.1.145 is compatible with 6.1.157 (same branch).
 - ACLaniakea's kernel is only for ColorOS 16 — not for stock Lenovo.
 
-## Sources
+## Sources+respect
 - [zzh20188/GKI_KernelSU_SUSFS](https://github.com/zzh20188/GKI_KernelSU_SUSFS)
 - [ravindu644/Droidspaces-OSS](https://github.com/ravindu644/Droidspaces-OSS)
 - [miner7222/LTBox](https://github.com/miner7222/LTBox)
+- [coloros-pad-fixes](https://github.com/ACLaniakea/coloros-pad-fixes)
 
 License inherited from upstream.
